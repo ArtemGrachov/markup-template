@@ -1,1 +1,2 @@
-console.log('main');
+const x = 12;
+console.log('main', x);

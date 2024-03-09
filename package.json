@@ -9,9 +9,10 @@
     "folders": "mkdir ./dist",
     "build:templates": "pug ./templates/pages --out ./dist",
     "build:styles": "sass styles:dist/styles",
-    "build:scripts": "cp -r scripts dist/scripts",
+    "build:scripts": "./node_modules/.bin/babel scripts --out-dir dist/scripts",
     "watch:templates": "npm run build:templates -- --watch",
     "watch:styles": "npm run build:styles -- --watch",
+    "watch:scripts": "npm run build:scripts -- --watch",
     "init": "npm run clean && npm run folders",
     "build": "npm run init && run-p build:*",
     "watch": "npm run init && run-p watch:*"
@@ -27,6 +28,8 @@
   "author": "Artem Grachov",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
     "npm-run-all": "^4.1.5",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.71.1"
