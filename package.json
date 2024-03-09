@@ -10,8 +10,8 @@
     "build:templates": "pug ./templates/pages --out ./dist",
     "build:styles": "sass styles:dist/styles",
     "build:scripts": "cp -r scripts dist/scripts",
-    "watch:templates": "pug --watch ./templates/pages --out ./dist",
-    "watch:styles": "sass styles:dist/styles --watch",
+    "watch:templates": "npm run build:templates -- --watch",
+    "watch:styles": "npm run build:styles -- --watch",
     "init": "npm run clean && npm run folders",
     "build": "npm run init && run-p build:*",
     "watch": "npm run init && run-p watch:*"
