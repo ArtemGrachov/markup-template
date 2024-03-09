@@ -1,0 +1,29 @@
+{
+  "name": "markup-template",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating HTML templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist",
+    "folders": "mkdir ./dist",
+    "build:templates": "pug ./templates/pages --out ./dist",
+    "build:styles": "sass styles/entrypoints:dist/styles",
+    "build:scripts": "cp -r scripts dist/scripts",
+    "build": "npm run clean && npm run folders && npm run build:templates && npm run build:styles && npm run build:scripts"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "markup",
+    "template",
+    "front-end"
+  ],
+  "author": "Artem Grachov",
+  "license": "ISC",
+  "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.71.1"
+  }
+}
