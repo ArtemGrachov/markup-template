@@ -4,7 +4,6 @@
   "description": "Boilerplate for creating HTML templates",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",
     "folders": "mkdir ./dist",
     "build:templates": "pug ./src/templates/pages --out ./dist",
