@@ -10,14 +10,15 @@
     "build:templates": "pug ./src/templates/pages --out ./dist",
     "build:styles": "postcss ./src/styles/**/[^_]*.scss --dir ./dist/styles --ext css",
     "build:scripts": "./node_modules/.bin/babel ./src/scripts --out-dir dist/scripts",
-    "build:static": "cp -r ./src/static/* ./dist/  ",
+    "build:static": "cp -r ./src/static/* ./dist",
+    "build:images": "cp -r ./src/images/* ./dist",
     "watch:templates": "npm run build:templates -- --watch",
     "watch:styles": "npm run build:styles -- --watch",
     "watch:scripts": "npm run build:scripts -- --watch",
     "watch:server": "bash ./utils/wait-template.sh && cd dist && live-server",
     "init": "npm run clean && npm run folders",
     "build": "npm run init && run-p build:*",
-    "watch": "npm run init && npm run build:static && run-p watch:*"
+    "watch": "npm run init && npm run build:static && npm run build:images && run-p watch:*"
   },
   "keywords": [
     "html",
